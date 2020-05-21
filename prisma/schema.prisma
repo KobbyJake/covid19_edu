@@ -1,0 +1,37 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model student_old_20200521 {
+  age             Int?
+  class_of_study  String?
+  first_name      String?
+  // This type is currently not supported.
+  // gender       text(1)?
+  id              String   @id
+  last_name       String?
+  name_of_school  String?
+  password        String?
+  region_of_study String?
+  user_name       String?
+
+  @@map("_student_old_20200521")
+}
+
+model student {
+  age             Int?
+  class_of_study  String?
+  first_name      String?
+  gender          String?
+  id              String  @id
+  last_name       String?
+  name_of_school  String?
+  password        String?
+  region_of_study String?
+  user_name       String?
+}
