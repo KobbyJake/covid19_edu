@@ -31,13 +31,13 @@
                   color="light-blue lighten-2"
                   class="text-none"
                   v-on="on"
-                  ><v-icon left>mdi-file-edit</v-icon>Register</v-btn
+                  ><v-icon left>mdi-account-edit</v-icon>Register</v-btn
                 >
                 <!-- <v-btn color="primary" dark v-on="on">Open Dialog</v-btn> -->
               </template>
               <v-card shaped dark>
                 <v-card-title>
-                  <v-icon left large>mdi-file-edit</v-icon>
+                  <v-icon left large>mdi-account-edit</v-icon>
                   <span>Student Registration</span>
                 </v-card-title>
                 <hr />
@@ -48,6 +48,7 @@
                         <v-col cols="12" sm="6" md="6">
                           <v-text-field
                             label="Legal first name*"
+                            v-model="student.first_name"
                             required
                             :rules="firstNameRules"
                           ></v-text-field>
@@ -56,18 +57,15 @@
                         <v-col cols="12" sm="6" md="6">
                           <v-text-field
                             label="Legal last name*"
+                            v-model="student.last_name"
                             required
                             :rules="lastNameRules"
                           ></v-text-field>
                         </v-col>
 
                         <v-col cols="12" sm="6">
-                          <!-- <v-select
-                          :items="['0-17', '18-29', '30-54', '54+']"
-                          label="Age*"
-                          required
-                        ></v-select> -->
                           <v-text-field
+                            v-model="student.age"
                             required
                             type="number"
                             max="25"
@@ -77,15 +75,20 @@
                         </v-col>
                         <v-col cols="12" sm="6">
                           <v-select
+                            v-model="student.gender"
                             :items="['Male', 'Female']"
                             label="Gender"
                           ></v-select>
                         </v-col>
                         <v-col cols="12">
-                          <v-text-field label="Name of school*"></v-text-field>
+                          <v-text-field
+                            v-model="student.name_of_school"
+                            label="Name of school*"
+                          ></v-text-field>
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
                           <v-autocomplete
+                            v-model="student.region_of_school"
                             :items="[
                               'Oti',
                               'Bono East',
@@ -107,6 +110,7 @@
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
                           <v-autocomplete
+                            v-model="student.class_of_study"
                             :items="[
                               'Basic 1',
                               'Basic 2',
@@ -165,25 +169,23 @@ export default {
     return {
       dialog: false,
       valid: false,
-      name: '',
+      student: {
+        first_name: '',
+        last_name: '',
+        age: '',
+        gender: '',
+        name_of_school: '',
+        region_of_school: '',
+        class_of_study: ''
+      },
       lastNameRules: [
         (v) => !!v || 'Last name is required',
-        (v) => (v && v.length <= 2) || 'Name must be less than a character'
+        (v) => (v && v.length <= 2) || 'Name must not be less than a character'
       ],
       firstNameRules: [
         (v) => !!v || 'First name is required',
-        (v) => (v && v.length <= 2) || 'Name must be less than a character'
-      ],
-
-      email: '',
-      emailRules: [
-        (v) => !!v || 'E-mail is required',
-        (v) => /.+@.+\..+/.test(v) || 'E-mail must be valid'
-      ],
-      select: null,
-      items: ['Item 1', 'Item 2', 'Item 3', 'Item 4'],
-      checkbox: false,
-      lazy: false
+        (v) => (v && v.length <= 2) || 'Name must not be less than a character'
+      ]
     }
   }
   // components: {

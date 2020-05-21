@@ -63,7 +63,7 @@
       </v-list>
     </v-navigation-drawer> -->
     <v-footer :fixed="fixed" app color="light-blue darken-2">
-      <span>&copy; {{ new Date().getFullYear() }}</span>
+      <span>Project &copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
 </template>
