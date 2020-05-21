@@ -35,10 +35,10 @@
                 >
                 <!-- <v-btn color="primary" dark v-on="on">Open Dialog</v-btn> -->
               </template>
-              <v-card>
+              <v-card shaped dark>
                 <v-card-title>
                   <v-icon left large>mdi-file-edit</v-icon>
-                  <span class="headline text-center">Student Registration</span>
+                  <span>Student Registration</span>
                 </v-card-title>
                 <hr />
                 <v-card-text>
@@ -78,7 +78,7 @@
                         <v-col cols="12" sm="6">
                           <v-select
                             :items="['Male', 'Female']"
-                            label="Gender*"
+                            label="Gender"
                           ></v-select>
                         </v-col>
                         <v-col cols="12">
@@ -106,10 +106,21 @@
                           ></v-autocomplete>
                         </v-col>
                         <v-col cols="12" sm="6" md="6">
-                          <v-text-field
+                          <v-autocomplete
+                            :items="[
+                              'Basic 1',
+                              'Basic 2',
+                              'Basic 3',
+                              'Basic 4',
+                              'Basic 5',
+                              'Basic 6',
+                              'JHS 1',
+                              'JHS 2',
+                              'JHS 3'
+                            ]"
                             label="Class of study*"
                             required
-                          ></v-text-field>
+                          ></v-autocomplete>
                         </v-col>
                       </v-row>
                     </v-container>
@@ -125,7 +136,7 @@
                     color="default"
                     class="text-none"
                     @click="dialog = false"
-                    >Close</v-btn
+                    ><v-icon left>mdi-close</v-icon>Close</v-btn
                   >
                   <v-btn
                     outlined
@@ -133,7 +144,7 @@
                     color="light-blue lighten-2"
                     class="text-none"
                     @click="dialog = false"
-                    >Save</v-btn
+                    ><v-icon left>mdi-content-save</v-icon>Save</v-btn
                   >
                 </v-card-actions>
               </v-card>
@@ -152,7 +163,7 @@
 export default {
   data() {
     return {
-      dialog: true,
+      dialog: false,
       valid: false,
       name: '',
       lastNameRules: [
