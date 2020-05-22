@@ -25,9 +25,11 @@
       </v-list>
     </v-navigation-drawer> -->
     <v-app-bar elevate-on-scroll fixed app color="light-blue darken-2">
-      <v-avatar>
-        <img src="/icon.png" alt="favicon" />
-      </v-avatar>
+      <v-app-bar-nav-icon to="/">
+        <v-avatar>
+          <img src="/icon.png" alt="favicon" />
+        </v-avatar>
+      </v-app-bar-nav-icon>
 
       <v-toolbar-title v-text="title" />
       <v-spacer />
