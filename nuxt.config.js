@@ -14,7 +14,9 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: process.env.npm_package_description || ''
+        content:
+          process.env.npm_package_description ||
+          'Educating Ghanaian basic school students on COVID-19'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -49,6 +51,11 @@ export default {
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv'
   ],
+  toast: {
+    iconPack: 'mdi',
+    position: 'bottom-right',
+    duration: 5000
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options

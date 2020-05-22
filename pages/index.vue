@@ -237,6 +237,11 @@ export default {
         //   select: this.select,
         //   checkbox: this.checkbox
         // })
+        this.$toast.success('Registraton complete', {
+          iconPack: 'mdi',
+          icon: 'mdi-content-save'
+        })
+        this.$router.push('/login')
       }
     },
     clear() {
