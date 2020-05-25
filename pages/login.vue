@@ -103,6 +103,7 @@ export default {
           name: this.name,
           email: this.email,
           select: this.select,
+
           checkbox: this.checkbox
         })
       }

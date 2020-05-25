@@ -1,10 +1,9 @@
 <template>
-  <div>
-    <v-container mt-8>
-      <br />
+  <v-layout class="wall" fill-height>
+    <v-container fill-height>
       <v-row d-flex reverse wrap>
         <v-col class="animated fadeInLeftBig">
-          <v-container text-center align-center justify-center class="hero">
+          <v-container text-center align-center justify-center>
             <img src="~assets/medicare.svg" alt="shsc logo" width="400" />
           </v-container>
         </v-col>
@@ -28,7 +27,7 @@
                 <v-btn
                   outlined
                   rounded
-                  color="light-blue lighten-2"
+                  color="default"
                   class="text-none"
                   v-on="on"
                   ><v-icon left>mdi-account-edit</v-icon>Register</v-btn
@@ -173,7 +172,7 @@
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </v-layout>
 </template>
 
 <script>
@@ -255,10 +254,8 @@ export default {
 }
 </script>
 <style>
-.banner {
-  height: 100%;
-}
-.hero {
-  transform: translateY(5%);
+.wall {
+  background: url(~assets/cool-background.png) no-repeat center fixed;
+  background-size: cover;
 }
 </style>
