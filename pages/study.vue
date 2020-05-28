@@ -90,7 +90,7 @@
         </v-carousel-item>
         <v-carousel-item>
           <v-row class="fill-height" align="center" justify="center">
-            <img src="~assets/signs.jpg" width="900" />
+            <img src="~assets/signs.JPG" width="900" />
           </v-row>
         </v-carousel-item>
       </v-carousel>
