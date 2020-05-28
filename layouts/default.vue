@@ -13,6 +13,10 @@
         <v-icon>mdi-lock-open</v-icon>
         login
       </v-btn>
+      <v-btn text class="text-none" nuxt to="/study">
+        <v-icon>mdi-book-open</v-icon>
+        study
+      </v-btn>
     </v-app-bar>
     <v-content>
       <nuxt />

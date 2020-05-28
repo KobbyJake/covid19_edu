@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <v-container mt-8>
-      <br />
+  <v-layout class="wall" fill-height>
+    <v-container fill-height>
       <v-row d-flex reverse wrap>
         <v-col>
           <p class="font-weight-black display-3 animated fadeInRightBig">
@@ -65,13 +64,13 @@
           <br />
         </v-col>
         <v-col class="animated fadeInLeftBig">
-          <v-container text-center align-center justify-center class="hero">
-            <img src="~assets/auth.svg" alt="shsc logo" width="400" />
+          <v-container text-center align-center justify-center>
+            <img src="~assets/login.svg" alt="shsc logo" width="400vw" />
           </v-container>
         </v-col>
       </v-row>
     </v-container>
-  </div>
+  </v-layout>
 </template>
 <script>
 import axios from 'axios'
@@ -114,5 +113,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped></style>

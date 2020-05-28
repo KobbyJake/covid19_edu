@@ -25,7 +25,7 @@
       </v-list>
     </v-navigation-drawer> -->
     <v-app-bar elevate-on-scroll fixed app color="light-blue darken-2">
-      <v-app-bar-nav-icon to="/">
+      <v-app-bar-nav-icon to="/?dialog=">
         <v-avatar>
           <img src="/icon.png" alt="favicon" />
         </v-avatar>
@@ -38,7 +38,7 @@
         Register
       </v-btn> -->
 
-      <v-btn text class="text-none" nuxt to="/">
+      <v-btn text class="text-none" nuxt to="/?dialog=true">
         <v-icon>mdi-account-edit</v-icon>
         Register
       </v-btn>

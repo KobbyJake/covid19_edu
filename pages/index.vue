@@ -4,7 +4,13 @@
       <v-row d-flex reverse wrap>
         <v-col class="animated fadeInLeftBig">
           <v-container text-center align-center justify-center>
-            <img src="~assets/medicare.svg" alt="shsc logo" width="400" />
+            <v-playback
+              ref="covidrun"
+              url="/covidrun.mp4"
+              loop
+              auto-play="play"
+            ></v-playback>
+            <!-- <img src="~assets/medicare.svg" alt="medical care" width="400vw" /> -->
           </v-container>
         </v-col>
         <v-col>
