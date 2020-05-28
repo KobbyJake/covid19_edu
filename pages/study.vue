@@ -687,7 +687,7 @@
                         text
                         @click="dialog = false"
                         nuxt
-                        to="/"
+                        to="/certificate"
                       >
                         OK
                       </v-btn>
