@@ -704,8 +704,6 @@
 </template>
 
 <script>
-import VideoPlayer from '@/components/VideoPlayer.vue'
-// import vPlayBack from 'v-playback'
 export default {
   data() {
     return {
@@ -714,14 +712,12 @@ export default {
       marks: 0
     }
   },
-  components: {
-    VideoPlayer
-  },
   methods: {
     response() {
       this.$toast.success('Correct Response', {
         iconPack: 'mdi',
-        icon: 'mdi-content-save'
+        icon: 'mdi-content-save',
+        theme: outline
       })
       this.marks++
       this.model++
