@@ -9,12 +9,9 @@
 
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <v-btn text class="text-none" nuxt to="/login">
-        <v-icon>mdi-lock-open</v-icon>
-        login
-      </v-btn>
+
       <v-btn text class="text-none" nuxt to="/study">
-        <v-icon>mdi-book-open</v-icon>
+        <v-icon>mdi-library</v-icon>
         study
       </v-btn>
     </v-app-bar>
@@ -23,7 +20,24 @@
     </v-content>
 
     <v-footer :fixed="fixed" app color="light-blue darken-2">
-      <span>Project &copy; {{ new Date().getFullYear() }}</span>
+      <v-row justify="center">
+        <span>Made by Jake Appiah Baah </span>
+        <v-divider class="mx-4" vertical></v-divider>
+        <a href="mailto:appiahbaahjake@gmail.com"><v-icon>mdi-gmail</v-icon></a>
+
+        <v-divider class="mx-4" vertical></v-divider>
+        <a href="http://twitter.com/@kobbyjake_" target="_blank"
+          ><v-icon>mdi-twitter</v-icon></a
+        >
+
+        <v-divider class="mx-4" vertical></v-divider>
+        <!-- <a
+          href="http://facebook.com/appiahbaahjake"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><v-icon>mdi-facebook</v-icon></a
+        > -->
+      </v-row>
     </v-footer>
   </v-app>
 </template>
@@ -32,8 +46,6 @@
 export default {
   data() {
     return {
-      // clipped: false,
-      // drawer: false,
       fixed: false,
       title: 'Covid-19 Educator'
     }

@@ -1,22 +1,22 @@
 <template>
   <v-tabs vertical fill-height>
-    <v-tab class="text-none text-left">
+    <v-tab class="text-none">
       <!-- <v-icon left>mdi-account</v-icon> -->
       Introduction
     </v-tab>
     <v-tab>
       <!-- <v-icon left>mdi-lock</v-icon> -->
-      <p class="text-none text-left">Prevention</p>
+      <p class="text-none">Prevention</p>
     </v-tab>
-    <v-tab class="text-none text-left">
+    <v-tab class="text-none">
       <!-- <v-icon left>mdi-access-point</v-icon> -->
       Treatment
     </v-tab>
-    <v-tab class="text-none text-left">
+    <v-tab class="text-none">
       <!-- <v-icon left>mdi-account</v-icon> -->
       Myths and Facts
     </v-tab>
-    <v-tab class="text-none text-left">
+    <v-tab class="text-none">
       <!-- <v-icon left>mdi-account</v-icon> -->
       Quiz
     </v-tab>
@@ -344,10 +344,16 @@
         <v-carousel-item>
           <v-container>
             <v-row>
-              <p class="display-2 font-weight-black">
+              <p class="display-2 font-weight-black text-center">
                 Test your knowledge on COVID-19
               </p>
-              <v-spacer></v-spacer>
+            </v-row>
+          </v-container>
+
+          <hr />
+
+          <v-container text-center align-center justify-center>
+            <v-row>
               <v-btn
                 outlined
                 rounded
@@ -357,14 +363,14 @@
                 @click="model++"
                 ><v-icon left>mdi-marker-check</v-icon>Start work</v-btn
               >
+              <v-spacer></v-spacer>
+              <p>
+                Instruction: Select (click) the correct option
+              </p>
             </v-row>
-          </v-container>
-
-          <hr />
-          <!-- <br /> -->
-
-          <v-container text-center align-center justify-center>
-            <img src="~assets/exams.svg" alt="exam svg" width="400vw" />
+            <v-row align="center" justify="center">
+              <img src="~assets/exams.svg" alt="exam svg" width="400vw" />
+            </v-row>
           </v-container>
         </v-carousel-item>
         <v-carousel-item>
@@ -372,6 +378,7 @@
             <h1 class="display-2 font-weight-black">
               How is COVID-19 passed on?
             </h1>
+            <p class="text-right">1 of 10</p>
             <hr />
             <br />
             <v-radio-group class="display-1 font-weight-medium">
@@ -403,6 +410,7 @@
             <h1 class="display-2 font-weight-black">
               What are the common symptoms of COVID-19?
             </h1>
+            <p class="text-right">2 of 10</p>
             <hr />
             <br />
             <v-radio-group class="display-1 font-weight-medium">
@@ -430,6 +438,7 @@
             <h1 class="display-2 font-weight-black">
               Can you always tell if someone has COVID-19?
             </h1>
+            <p class="text-right">3 of 10</p>
             <hr />
             <br />
             <v-radio-group class="display-1 font-weight-medium">
@@ -456,6 +465,7 @@
             <h1 class="display-2 font-weight-black">
               Can washing your hands protect you from COVID-19?
             </h1>
+            <p class="text-right">4 of 10</p>
             <hr />
             <br />
             <v-radio-group class="display-1 font-weight-medium">
@@ -482,6 +492,7 @@
             <h1 class="display-2 font-weight-black">
               Which of the following people is COVID-19 more dangerous for?
             </h1>
+            <p class="text-right">5 of 10</p>
             <hr />
             <br />
             <v-radio-group class="display-1 font-weight-medium">
@@ -513,6 +524,7 @@
             <h1 class="display-2 font-weight-black">
               Are people living with HIV always more at risk?
             </h1>
+            <p class="text-right">6 of 10</p>
             <hr />
             <br />
             <v-radio-group class="display-1 font-weight-medium">
@@ -534,6 +546,7 @@
             <h1 class="display-2 font-weight-black">
               Should you wear a mask to protect yourself when you go outside?
             </h1>
+            <p class="text-right">7 of 10</p>
             <hr />
             <br />
             <v-radio-group class="display-1 font-weight-medium">
@@ -555,6 +568,7 @@
             <h1 class="display-2 font-weight-black">
               Can COVID-19 be cured?
             </h1>
+            <p class="text-right">8 of 10</p>
             <hr />
             <br />
             <v-radio-group class="display-1 font-weight-medium">
@@ -581,6 +595,7 @@
             <h1 class="display-2 font-weight-black">
               Which of the following is an example of physical distancing?
             </h1>
+            <p class="text-right">9 of 10</p>
             <hr />
             <br />
             <v-radio-group class="display-1 font-weight-medium">
@@ -607,6 +622,7 @@
             <h1 class="display-2 font-weight-black">
               How can people living with HIV protect themselves from COVID-19?
             </h1>
+            <p class="text-right">10 of 10</p>
             <hr />
             <br />
             <v-radio-group class="display-1 font-weight-medium">
@@ -659,16 +675,6 @@
 
               <div class="text-center">
                 <v-dialog v-model="dialog" width="500">
-                  <!-- <template v-slot:activator="{ on }">
-        <v-btn
-          color="red lighten-2"
-          dark
-          v-on="on"
-        >
-          Click Me
-        </v-btn>
-      </template> -->
-
                   <v-card>
                     <v-card-title primary-title>
                       Quiz Complete
@@ -687,7 +693,7 @@
                         text
                         @click="dialog = false"
                         nuxt
-                        to="/certificate"
+                        to="/"
                       >
                         OK
                       </v-btn>
@@ -705,6 +711,7 @@
 
 <script>
 export default {
+  layout: 'flat',
   data() {
     return {
       dialog: false,
@@ -716,20 +723,18 @@ export default {
     response() {
       this.$toast.success('Correct Response', {
         iconPack: 'mdi',
-        icon: 'mdi-content-save',
-        theme: outline
+        icon: 'mdi-check',
+        theme: 'outline'
       })
       this.marks++
       this.model++
     },
     conclude() {
-      // this.$toast.success(
-      //   'Quiz completed, you scored ' + this.marks + ' out of 10',
-      //   {
-      //     iconPack: 'mdi',
-      //     icon: 'mdi-content-save'
-      //   }
-      // )
+      // this.$axios.put("/score", {
+      //   id: this.$auth.user.id,
+      //   score: this.marks,
+      //   status: "Educated"
+      // });
       this.dialog = true
       // this.model++
     }
