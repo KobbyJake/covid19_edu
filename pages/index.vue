@@ -2,7 +2,7 @@
   <v-layout class="wall" fill-height>
     <v-container fill-height>
       <v-row d-flex reverse wrap>
-        <v-col class="animated fadeInLeftBig">
+        <v-col class="animated fadeInLeftBig" md="5" cols="12">
           <v-container text-center align-center justify-center>
             <v-playback
               ref="covidrun"
@@ -13,7 +13,7 @@
             <!-- <img src="~assets/medicare.svg" alt="medical care" width="400vw" /> -->
           </v-container>
         </v-col>
-        <v-col>
+        <v-col md="7" cols="12">
           <p class="font-weight-black display-3 animated fadeInRightBig">
             COVID-19 Educator.
           </p>
@@ -51,7 +51,15 @@
                     <span>Student Registration</span>
                   </v-card-title>
                   <hr />
-                  <v-form ref="form" v-model="valid" lazy-validation>
+                  <v-form
+                    ref="form"
+                    v-model="valid"
+                    lazy-validation
+                    name="educov-student"
+                    method="post"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                  >
                     <v-card-text>
                       <v-container>
                         <v-row>
@@ -246,7 +254,7 @@ export default {
           iconPack: 'mdi',
           icon: 'mdi-content-save'
         })
-        this.$router.push('/login')
+        this.$router.push('/study')
       }
     },
     clear() {

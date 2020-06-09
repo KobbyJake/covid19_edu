@@ -1,7 +1,7 @@
 {
   "name": "covid19_educator",
   "version": "1.0.0",
-  "description": "My funkadelic Nuxt.js project",
+  "description": "COVID-19 education for Ghanaian students",
   "author": "KobbyJake",
   "private": true,
   "scripts": {

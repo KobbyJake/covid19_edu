@@ -19,9 +19,9 @@
       <nuxt />
     </v-content>
 
-    <v-footer :fixed="fixed" app color="light-blue darken-2">
+    <v-footer fixed app color="light-blue darken-2">
       <v-row justify="center">
-        <span>Made by Jake Appiah Baah </span>
+        <span>By Jake Appiah Baah </span>
         <v-divider class="mx-4" vertical></v-divider>
         <a href="mailto:appiahbaahjake@gmail.com"><v-icon>mdi-gmail</v-icon></a>
 
@@ -31,12 +31,11 @@
         >
 
         <v-divider class="mx-4" vertical></v-divider>
-        <!-- <a
-          href="http://facebook.com/appiahbaahjake"
-          target="_blank"
-          rel="noopener noreferrer"
-          ><v-icon>mdi-facebook</v-icon></a
-        > -->
+
+        <a href="https://github.com/KobbyJake" target="_blank"
+          ><v-icon>mdi-github</v-icon></a
+        >
+        <v-divider class="mx-4" vertical></v-divider>
       </v-row>
     </v-footer>
   </v-app>
