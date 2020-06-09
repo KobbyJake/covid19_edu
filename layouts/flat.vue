@@ -20,7 +20,7 @@
       <nuxt />
     </v-content>
 
-    <v-footer fixed app color="light-blue darken-2">
+    <v-footer app color="light-blue darken-2">
       <v-row justify="center">
         <span>By Jake Appiah Baah </span>
         <v-divider class="mx-4" vertical></v-divider>

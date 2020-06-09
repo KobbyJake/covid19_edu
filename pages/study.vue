@@ -38,7 +38,10 @@
             </h1>
             <hr />
             <v-row class="fill-height" align="center" justify="center">
-              <img src="~assets/covidscare.jpg" width="900" />
+              <img
+                src="~assets/covidscare.jpg"
+                :width="$vuetify.breakpoint.mdAndUp ? 900 : 500"
+              />
             </v-row>
           </v-carousel-item>
           <v-carousel-item>
@@ -146,7 +149,10 @@
           </v-carousel-item>
           <v-carousel-item>
             <v-row class="fill-height" align="center" justify="center">
-              <img src="~assets/signs.JPG" width="900" />
+              <img
+                src="~assets/signs.JPG"
+                :width="$vuetify.breakpoint.mdAndUp ? 900 : 500"
+              />
             </v-row>
           </v-carousel-item>
         </v-carousel>
@@ -224,12 +230,15 @@
           </v-carousel-item>
           <v-carousel-item>
             <v-row class="fill-height" align="center" justify="center">
-              <img src="~assets/covidprotect.jpg" width="900" />
+              <img
+                src="~assets/covidprotect.jpg"
+                :width="$vuetify.breakpoint.mdAndUp ? 900 : 500"
+              />
             </v-row>
           </v-carousel-item>
           <v-carousel-item>
             <!-- <v-row class="fill-height" align="center" justify="center">
-            <img src="~assets/covidprotect.jpg" width="900" />
+            <img src="~assets/covidprotect.jpg" :width="$vuetify.breakpoint.mdAndUp ? 900 : 500" />
           </v-row> -->
             <v-container>
               <v-playback
@@ -635,46 +644,59 @@
             </v-container>
           </v-carousel-item>
           <v-carousel-item>
-            <v-container fluid>
-              <h1 class="display-2 font-weight-black">
-                How is COVID-19 passed on?
-              </h1>
-              <p class="text-right">1 of 10</p>
-              <hr />
-              <br />
-              <v-radio-group
-                :class="{
-                  'subtitle-2': $vuetify.breakpoint.smAndDown,
-                  'display-1': $vuetify.breakpoint.mdAndUp,
-                  'font-weight-medium': true
-                }"
-              >
-                <v-radio
-                  @click="response"
-                  label="Through droplets that come from your mouth and nose when you cough or breathe out"
-                  value="radio-1"
-                ></v-radio>
-                <v-radio
-                  @click="model++"
-                  label="In sexual fluids, including semen, vaginal fluids or anal mucous"
-                  value="radio-2"
-                ></v-radio>
-                <v-radio
-                  @click="model++"
-                  label="By drinking unclean water"
-                  value="radio-3"
-                ></v-radio>
-                <v-radio
-                  @click="model++"
-                  label="All of the above"
-                  value="radio-4"
-                ></v-radio>
-              </v-radio-group>
-            </v-container>
+            <p
+              :class="{
+                title: $vuetify.breakpoint.mdAndDown,
+                'display-2': $vuetify.breakpoint.lgAndUp,
+                'font-weight-black': true,
+                'text-center': true
+              }"
+            >
+              How is COVID-19 passed on?
+            </p>
+
+            <p class="text-right">1 of 10</p>
+            <hr />
+            <br />
+            <v-radio-group
+              :class="{
+                'subtitle-2': $vuetify.breakpoint.smAndDown,
+                'display-1': $vuetify.breakpoint.mdAndUp,
+                'font-weight-medium': true
+              }"
+            >
+              <v-radio
+                @click="response"
+                label="Through droplets that come from your mouth and nose when you cough or breathe out"
+                value="radio-1"
+              ></v-radio>
+              <v-radio
+                @click="model++"
+                label="In sexual fluids, including semen, vaginal fluids or anal mucous"
+                value="radio-2"
+              ></v-radio>
+              <v-radio
+                @click="model++"
+                label="By drinking unclean water"
+                value="radio-3"
+              ></v-radio>
+              <v-radio
+                @click="model++"
+                label="All of the above"
+                value="radio-4"
+              ></v-radio>
+            </v-radio-group>
           </v-carousel-item>
           <v-carousel-item>
             <v-container fluid>
-              <h1 class="display-2 font-weight-black">
+              <h1
+                :class="{
+                  title: $vuetify.breakpoint.smAndDown,
+                  'display-2': $vuetify.breakpoint.mdAndUp,
+                  'font-weight-black': true,
+                  'text-center': true
+                }"
+              >
                 What are the common symptoms of COVID-19?
               </h1>
               <p class="text-right">2 of 10</p>
@@ -712,7 +734,14 @@
           </v-carousel-item>
           <v-carousel-item>
             <v-container fluid>
-              <h1 class="display-2 font-weight-black">
+              <h1
+                :class="{
+                  title: $vuetify.breakpoint.smAndDown,
+                  'display-2': $vuetify.breakpoint.mdAndUp,
+                  'font-weight-black': true,
+                  'text-center': true
+                }"
+              >
                 Can you always tell if someone has COVID-19?
               </h1>
               <p class="text-right">3 of 10</p>
@@ -745,7 +774,13 @@
           </v-carousel-item>
           <v-carousel-item>
             <v-container fluid>
-              <h1 class="display-2 font-weight-black">
+              <h1
+                :class="{
+                  title: $vuetify.breakpoint.smAndDown,
+                  'display-2': $vuetify.breakpoint.mdAndUp,
+                  'font-weight-black': true
+                }"
+              >
                 Can washing your hands protect you from COVID-19?
               </h1>
               <p class="text-right">4 of 10</p>
@@ -778,7 +813,14 @@
           </v-carousel-item>
           <v-carousel-item>
             <v-container fluid>
-              <h1 class="display-2 font-weight-black">
+              <h1
+                :class="{
+                  title: $vuetify.breakpoint.smAndDown,
+                  'display-2': $vuetify.breakpoint.mdAndUp,
+                  'font-weight-black': true,
+                  'text-center': true
+                }"
+              >
                 Which of the following people is COVID-19 more dangerous for?
               </h1>
               <p class="text-right">5 of 10</p>
@@ -816,7 +858,14 @@
           </v-carousel-item>
           <v-carousel-item>
             <v-container fluid>
-              <h1 class="display-2 font-weight-black">
+              <h1
+                :class="{
+                  title: $vuetify.breakpoint.smAndDown,
+                  'display-2': $vuetify.breakpoint.mdAndUp,
+                  'font-weight-black': true,
+                  'text-center': true
+                }"
+              >
                 Are people living with HIV always more at risk?
               </h1>
               <p class="text-right">6 of 10</p>
@@ -844,7 +893,14 @@
           </v-carousel-item>
           <v-carousel-item>
             <v-container fluid>
-              <h1 class="display-2 font-weight-black">
+              <h1
+                :class="{
+                  title: $vuetify.breakpoint.smAndDown,
+                  'display-2': $vuetify.breakpoint.mdAndUp,
+                  'font-weight-black': true,
+                  'text-center': true
+                }"
+              >
                 Should you wear a mask to protect yourself when you go outside?
               </h1>
               <p class="text-right">7 of 10</p>
@@ -872,7 +928,14 @@
           </v-carousel-item>
           <v-carousel-item>
             <v-container fluid>
-              <h1 class="display-2 font-weight-black">
+              <h1
+                :class="{
+                  title: $vuetify.breakpoint.smAndDown,
+                  'display-2': $vuetify.breakpoint.mdAndUp,
+                  'font-weight-black': true,
+                  'text-center': true
+                }"
+              >
                 Can COVID-19 be cured?
               </h1>
               <p class="text-right">8 of 10</p>
@@ -905,7 +968,14 @@
           </v-carousel-item>
           <v-carousel-item>
             <v-container fluid>
-              <h1 class="display-2 font-weight-black">
+              <h1
+                :class="{
+                  title: $vuetify.breakpoint.smAndDown,
+                  'display-2': $vuetify.breakpoint.mdAndUp,
+                  'font-weight-black': true,
+                  'text-center': true
+                }"
+              >
                 Which of the following is an example of physical distancing?
               </h1>
               <p class="text-right">9 of 10</p>
@@ -938,7 +1008,14 @@
           </v-carousel-item>
           <v-carousel-item>
             <v-container fluid>
-              <h1 class="display-2 font-weight-black">
+              <h1
+                :class="{
+                  title: $vuetify.breakpoint.smAndDown,
+                  'display-2': $vuetify.breakpoint.mdAndUp,
+                  'font-weight-black': true,
+                  'text-center': true
+                }"
+              >
                 How can people living with HIV protect themselves from COVID-19?
               </h1>
               <p class="text-right">10 of 10</p>
@@ -992,7 +1069,7 @@
               <br />
               <br />
               <v-row class="fill-height" align="center" justify="center">
-                <!-- <img src="~assets/covidscare.jpg" width="900" /> -->
+                <!-- <img src="~assets/covidscare.jpg" :width="$vuetify.breakpoint.mdAndUp ? 900 : 500" /> -->
 
                 <v-btn
                   outlined
