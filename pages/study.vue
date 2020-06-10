@@ -23,7 +23,7 @@
       </v-tab>
 
       <v-tab-item>
-        <v-carousel fill-height>
+        <v-carousel fill-height :dark="true">
           <v-carousel-item>
             <!-- <br /> :class="{'title': $vuetify.breakpoint. smAndDown, 'display-2': $vuetify.breakpoint. mdAndUp} font-weight-black text-center"-->
             <h1
@@ -61,7 +61,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               COVID-19, otherwise known as coronavirus disease 2019, is a new
@@ -91,7 +91,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               COVID-19 is spread through contact with respiratory droplets of a
@@ -123,7 +123,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               The most common symptoms are a dry cough, tiredness and a high
@@ -135,7 +135,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               Around 80% of people with COVID-19 recover from the virus without
@@ -176,7 +176,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               The best way to stop coronavirus infection is through frequent
@@ -192,7 +192,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               Be sure to avoid close contact with anyone who has a fever or
@@ -218,7 +218,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               Using a facemask is only effective if you are working with someone
@@ -241,11 +241,7 @@
             <img src="~assets/covidprotect.jpg" :width="$vuetify.breakpoint.mdAndUp ? 900 : 500" />
           </v-row> -->
             <v-container>
-              <v-playback
-                url="/handwashing.mp4"
-                loop
-                auto-play="play"
-              ></v-playback>
+              <v-playback url="/handwashing.mp4" auto-play="play"></v-playback>
             </v-container>
           </v-carousel-item>
           <v-carousel-item>
@@ -265,7 +261,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               To prevent the spread of COVID-19, people are advised to keep
@@ -280,7 +276,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               The aim of this advice is to slow the spread of the virus by
@@ -306,7 +302,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               The likelihood of serious illness increases in older populations
@@ -321,7 +317,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               Be sure to avoid close contact with anyone who has a fever or
@@ -350,7 +346,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               It can take up to 14 days for people to show symptoms, but most
@@ -359,7 +355,7 @@
             <!-- <p :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }">
             Be sure to avoid close contact with anyone who has a fever or cough.
             Similarly, if you are feeling unwell, make sure you keep away from
@@ -383,7 +379,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               If you think you have COVID-19, stay at home and call your local
@@ -396,7 +392,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               Avoid close contact with others in your household while you’re
@@ -421,7 +417,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               Around 80% of people who get COVID-19 will recover without needing
@@ -433,7 +429,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               Around one in six people will become severely ill and develop
@@ -458,7 +454,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               There’s no proven cure for COVID-19, but most people will recover
@@ -470,7 +466,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               If your symptoms don’t improve after seven days or if you have
@@ -499,7 +495,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               FACT: Most people who get COVID­-19 will have a mild form of the
@@ -527,7 +523,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               FACT: No The virus can be in someone’s body for up to 14 days
@@ -556,7 +552,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               FACT: While COVID-19 can be more dangerous in older people, anyone
@@ -584,7 +580,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               FACT: If you are living with HIV and on effective treatment
@@ -662,7 +658,7 @@
               :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-medium': true
+                'font-weight-light': true
               }"
             >
               <v-radio
@@ -706,7 +702,7 @@
                 :class="{
                   'subtitle-2': $vuetify.breakpoint.smAndDown,
                   'display-1': $vuetify.breakpoint.mdAndUp,
-                  'font-weight-medium': true
+                  'font-weight-light': true
                 }"
               >
                 <v-radio
@@ -751,7 +747,7 @@
                 :class="{
                   'subtitle-2': $vuetify.breakpoint.smAndDown,
                   'display-1': $vuetify.breakpoint.mdAndUp,
-                  'font-weight-medium': true
+                  'font-weight-light': true
                 }"
               >
                 <v-radio
@@ -790,7 +786,7 @@
                 :class="{
                   'subtitle-2': $vuetify.breakpoint.smAndDown,
                   'display-1': $vuetify.breakpoint.mdAndUp,
-                  'font-weight-medium': true
+                  'font-weight-light': true
                 }"
               >
                 <v-radio
@@ -830,7 +826,7 @@
                 :class="{
                   'subtitle-2': $vuetify.breakpoint.smAndDown,
                   'display-1': $vuetify.breakpoint.mdAndUp,
-                  'font-weight-medium': true
+                  'font-weight-light': true
                 }"
               >
                 <v-radio
@@ -875,7 +871,7 @@
                 :class="{
                   'subtitle-2': $vuetify.breakpoint.smAndDown,
                   'display-1': $vuetify.breakpoint.mdAndUp,
-                  'font-weight-medium': true
+                  'font-weight-light': true
                 }"
               >
                 <v-radio
@@ -910,7 +906,7 @@
                 :class="{
                   'subtitle-2': $vuetify.breakpoint.smAndDown,
                   'display-1': $vuetify.breakpoint.mdAndUp,
-                  'font-weight-medium': true
+                  'font-weight-light': true
                 }"
               >
                 <v-radio
@@ -945,7 +941,7 @@
                 :class="{
                   'subtitle-2': $vuetify.breakpoint.smAndDown,
                   'display-1': $vuetify.breakpoint.mdAndUp,
-                  'font-weight-medium': true
+                  'font-weight-light': true
                 }"
               >
                 <v-radio
@@ -985,7 +981,7 @@
                 :class="{
                   'subtitle-2': $vuetify.breakpoint.smAndDown,
                   'display-1': $vuetify.breakpoint.mdAndUp,
-                  'font-weight-medium': true
+                  'font-weight-light': true
                 }"
               >
                 <v-radio
@@ -1025,7 +1021,7 @@
                 :class="{
                   'subtitle-2': $vuetify.breakpoint.smAndDown,
                   'display-1': $vuetify.breakpoint.mdAndUp,
-                  'font-weight-medium': true
+                  'font-weight-light': true
                 }"
               >
                 <v-radio

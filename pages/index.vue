@@ -7,20 +7,29 @@
             <v-playback
               ref="covidrun"
               url="/covidrun.mp4"
-              loop
               auto-play="play"
             ></v-playback>
             <!-- <img src="~assets/medicare.svg" alt="medical care" width="400vw" /> -->
           </v-container>
         </v-col>
         <v-col md="7" cols="12">
-          <p class="font-weight-black display-3 animated fadeInRightBig">
+          <p
+            :class="{
+              headline: $vuetify.breakpoint.smAndDown,
+              'display-3': $vuetify.breakpoint.mdAndUp,
+              'font-weight-black': true
+            }"
+          >
             COVID-19 Educator.
           </p>
           <hr />
           <br />
           <p
-            class="font-weight-normal headline animated bounceInRight delay-1000"
+            :class="{
+              'subtitle-2': $vuetify.breakpoint.smAndDown,
+              headline: $vuetify.breakpoint.mdAndUp,
+              'font-weight-light': true
+            }"
           >
             Educating Ghanaian basic school students on the safety precautions
             to prevent COVID-19 infection and also manage infection.
