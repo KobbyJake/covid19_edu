@@ -6,8 +6,8 @@ export default {
    ** Headers of the page
    */
   head: {
-    titleTemplate: '%s - ' + process.env.npm_package_name,
-    title: process.env.npm_package_name || 'Covid-19 Educator',
+    // titleTemplate: '%s - ' + process.env.npm_package_name,
+    title: 'Covid-19 Educator',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -15,8 +15,7 @@ export default {
         hid: 'description',
         name: 'description',
         content:
-          process.env.npm_package_description ||
-          'Educating Ghanaian basic school students on COVID-19'
+          process.env.npm_package_description || 'Educov Ghana COVID-19 covid19'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]

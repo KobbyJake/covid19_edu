@@ -12,7 +12,7 @@
 
       <v-btn text class="text-none" nuxt to="/study">
         <v-icon>mdi-library</v-icon>
-        study
+        Study
       </v-btn>
     </v-app-bar>
     <v-content>

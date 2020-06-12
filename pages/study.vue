@@ -352,15 +352,17 @@
               It can take up to 14 days for people to show symptoms, but most
               people notice them in the first four to five days.
             </p>
-            <!-- <p :class="{
+            <p
+              :class="{
                 'subtitle-2': $vuetify.breakpoint.smAndDown,
                 'display-1': $vuetify.breakpoint.mdAndUp,
                 'font-weight-light': true
-              }">
-            Be sure to avoid close contact with anyone who has a fever or cough.
-            Similarly, if you are feeling unwell, make sure you keep away from
-            others.
-          </p> -->
+              }"
+            >
+              Be sure to avoid close contact with anyone who has a fever or
+              cough. Similarly, if you are feeling unwell, make sure you keep
+              away from others.
+            </p>
           </v-carousel-item>
           <v-carousel-item>
             <h1
@@ -459,8 +461,7 @@
             >
               There’s no proven cure for COVID-19, but most people will recover
               fully without needing medical treatment. If you’re unwell with
-              COVID-19, resting, drinking lots of liquids, and taking
-              paracetamol or other home remedies can help with symptoms.
+              COVID-19, resting and drinking lots of liquids can help.
             </p>
             <p
               :class="{
@@ -471,7 +472,8 @@
             >
               If your symptoms don’t improve after seven days or if you have
               difficulty breathing and persistent pain in your chest, call your
-              local health service immediately.
+              local health service immediately. Contact line 112 for cases in
+              Ghana
             </p>
           </v-carousel-item>
         </v-carousel>
@@ -631,7 +633,7 @@
                 >
                 <v-spacer></v-spacer>
                 <p>
-                  Instruction: Select (click) the correct option
+                  Instruction: Select the correct option (click on circle)
                 </p>
               </v-row>
               <v-row align="center" justify="center">
@@ -1092,16 +1094,16 @@
                       <v-divider></v-divider>
 
                       <v-card-actions>
-                        <v-spacer></v-spacer>
                         <v-btn
                           color="primary"
                           text
                           @click="dialog = false"
                           nuxt
-                          to="/"
+                          to="/register"
                         >
                           OK
                         </v-btn>
+                        <v-spacer></v-spacer>
                       </v-card-actions>
                     </v-card>
                   </v-dialog>
