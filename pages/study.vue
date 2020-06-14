@@ -237,12 +237,15 @@
             </v-row>
           </v-carousel-item>
           <v-carousel-item>
-            <!-- <v-row class="fill-height" align="center" justify="center">
-            <img src="~assets/covidprotect.jpg" :width="$vuetify.breakpoint.mdAndUp ? 900 : 500" />
-          </v-row> -->
-            <v-container>
+            <v-row class="fill-height" align="center" justify="center">
+              <img
+                src="/handwashing.gif"
+                :width="$vuetify.breakpoint.mdAndUp ? 600 : 400"
+              />
+            </v-row>
+            <!-- <v-container>
               <v-playback url="/handwashing.mp4" auto-play="play"></v-playback>
-            </v-container>
+            </v-container> -->
           </v-carousel-item>
           <v-carousel-item>
             <h1
@@ -310,19 +313,7 @@
               pressure, heart problems, lung disease or diabetes. There is
               currently no evidence to suggest that people living with HIV and
               on effective antiretroviral treatment are at an increased risk for
-              acquiring COVID-19 or developing severe symptoms. See our page on
-              COVID-19 and living with HIV.
-            </p>
-            <p
-              :class="{
-                'subtitle-2': $vuetify.breakpoint.smAndDown,
-                'display-1': $vuetify.breakpoint.mdAndUp,
-                'font-weight-light': true
-              }"
-            >
-              Be sure to avoid close contact with anyone who has a fever or
-              cough. Similarly, if you are feeling unwell, make sure you keep
-              away from others.
+              acquiring COVID-19 or developing severe symptoms.
             </p>
           </v-carousel-item>
         </v-carousel>

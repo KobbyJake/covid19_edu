@@ -22,7 +22,7 @@
             }"
           >
             Get to know about this disease. Understand the myths and facts,
-            safety precautions to prevent COVID-19 infection and also manage
+            safety precautions to prevent COVID-19 infection and how to manage
             infection.
           </p>
           <br />
@@ -60,8 +60,8 @@
               <v-list-item two-line>
                 <v-list-item-content>
                   <v-list-item-title class="headline"
-                    >Latest Update in Ghana</v-list-item-title
-                  >
+                    >COVID-19 Cases
+                  </v-list-item-title>
                   <v-list-item-subtitle
                     >{{ stats.ghana.date }}
                     {{ stats.ghana.time }}</v-list-item-subtitle
@@ -71,47 +71,105 @@
               <v-avatar :size="90">
                 <img src="/icon.png" alt="favicon" />
               </v-avatar>
-              <v-list class="transparent">
-                <v-list-item>
-                  <v-list-item-title>Confirmed Cases</v-list-item-title>
 
-                  <v-list-item-icon>
-                    <v-icon color="yellow">mdi-account-group</v-icon>
-                  </v-list-item-icon>
+              <v-tabs background-color="indigo darken-4">
+                <v-tab>🇬🇭 Ghana</v-tab>
+                <v-tab>&#127759; Global</v-tab>
+                <v-tab-item background-color="indigo darken-4">
+                  <v-list class="transparent">
+                    <v-list-item>
+                      <v-list-item-title>Confirmed Cases</v-list-item-title>
 
-                  <v-list-item-subtitle
-                    class="text-right font-weight-black headline"
-                  >
-                    {{ stats.ghana.confirmed }}
-                  </v-list-item-subtitle>
-                </v-list-item>
-                <v-list-item>
-                  <v-list-item-title>Recovered Cases</v-list-item-title>
+                      <v-list-item-icon>
+                        <v-icon color="yellow" size="32"
+                          >mdi-account-group</v-icon
+                        >
+                      </v-list-item-icon>
 
-                  <v-list-item-icon>
-                    <v-icon color="green">mdi-run-fast</v-icon>
-                  </v-list-item-icon>
+                      <v-list-item-subtitle
+                        class="text-right font-weight-black headline"
+                      >
+                        {{ stats.ghana.confirmed }}
+                      </v-list-item-subtitle>
+                    </v-list-item>
+                    <v-list-item>
+                      <v-list-item-title>Recovered Cases</v-list-item-title>
 
-                  <v-list-item-subtitle
-                    class="text-right font-weight-black headline"
-                  >
-                    {{ stats.ghana.recovered }}
-                  </v-list-item-subtitle>
-                </v-list-item>
-                <v-list-item>
-                  <v-list-item-title>Deaths Recorded</v-list-item-title>
+                      <v-list-item-icon>
+                        <v-icon color="green" size="32">mdi-run-fast</v-icon>
+                      </v-list-item-icon>
 
-                  <v-list-item-icon>
-                    <v-icon color="red">mdi-account-multiple-remove</v-icon>
-                  </v-list-item-icon>
+                      <v-list-item-subtitle
+                        class="text-right font-weight-black headline"
+                      >
+                        {{ stats.ghana.recovered }}
+                      </v-list-item-subtitle>
+                    </v-list-item>
+                    <v-list-item>
+                      <v-list-item-title>Deaths Recorded</v-list-item-title>
 
-                  <v-list-item-subtitle
-                    class="text-right font-weight-black headline"
-                  >
-                    {{ stats.ghana.deaths }}
-                  </v-list-item-subtitle>
-                </v-list-item>
-              </v-list>
+                      <v-list-item-icon>
+                        <v-icon color="red" size="32"
+                          >mdi-account-multiple-remove</v-icon
+                        >
+                      </v-list-item-icon>
+
+                      <v-list-item-subtitle
+                        class="text-right font-weight-black headline"
+                      >
+                        {{ stats.ghana.deaths }}
+                      </v-list-item-subtitle>
+                    </v-list-item>
+                  </v-list>
+                </v-tab-item>
+                <v-tab-item background-color="indigo darken-4">
+                  <v-list class="transparent">
+                    <v-list-item>
+                      <v-list-item-title>Confirmed Cases</v-list-item-title>
+
+                      <v-list-item-icon>
+                        <v-icon color="yellow" size="32"
+                          >mdi-account-group</v-icon
+                        >
+                      </v-list-item-icon>
+
+                      <v-list-item-subtitle
+                        class="text-right font-weight-black headline"
+                      >
+                        {{ stats.global.confirmed }}
+                      </v-list-item-subtitle>
+                    </v-list-item>
+                    <v-list-item>
+                      <v-list-item-title>Recovered Cases</v-list-item-title>
+
+                      <v-list-item-icon>
+                        <v-icon color="green" size="32">mdi-run-fast</v-icon>
+                      </v-list-item-icon>
+
+                      <v-list-item-subtitle
+                        class="text-right font-weight-black headline"
+                      >
+                        {{ stats.global.recovered }}
+                      </v-list-item-subtitle>
+                    </v-list-item>
+                    <v-list-item>
+                      <v-list-item-title>Deaths Recorded</v-list-item-title>
+
+                      <v-list-item-icon>
+                        <v-icon color="red" size="32"
+                          >mdi-account-multiple-remove</v-icon
+                        >
+                      </v-list-item-icon>
+
+                      <v-list-item-subtitle
+                        class="text-right font-weight-black headline"
+                      >
+                        {{ stats.global.deaths }}
+                      </v-list-item-subtitle>
+                    </v-list-item>
+                  </v-list>
+                </v-tab-item>
+              </v-tabs>
 
               <v-divider></v-divider>
 
@@ -160,36 +218,7 @@ export default {
       stats: {}
     }
   },
-  methods: {
-    registerStudent() {
-      this.student.user_name =
-        this.student.first_name.charAt(0) + this.student.last_name
-      this.student.user_name =
-        this.student.class_of_study + this.student.region_of_school
-      // await prisma.student.create({
-      //   data: this.student
-      // })
-    },
-    submit() {
-      if (this.$refs.form.validate()) {
-        // Native form submission is not yet supported
-        // axios.post('/api/submit', {
-        //   name: this.name,
-        //   email: this.email,
-        //   select: this.select,
-        //   checkbox: this.checkbox
-        // })
-        this.$toast.success('Registraton complete', {
-          iconPack: 'mdi',
-          icon: 'mdi-content-save'
-        })
-        this.$router.push('/study')
-      }
-    },
-    clear() {
-      this.$refs.form.reset()
-    }
-  },
+
   mounted() {
     this.$axios.get('https://mazitekgh.com/covid19/v1/').then((res) => {
       this.stats = res.data

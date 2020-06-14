@@ -27,11 +27,17 @@ export default {
   /*
    ** Global CSS
    */
-  css: [],
+  css: [
+    { src: 'animate.css/animate.min.css', lang: 'css' },
+    {
+      src: 'material-design-icons-iconfont/dist/material-design-icons.css',
+      lang: 'css'
+    }
+  ],
   /*
    ** Plugins to load before mounting the App
    */
-  plugins: ['@/plugins/playback'],
+  plugins: [],
   /*
    ** Nuxt.js dev-modules
    */
