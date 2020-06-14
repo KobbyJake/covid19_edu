@@ -7,7 +7,10 @@
         </v-avatar>
       </v-app-bar-nav-icon>
 
-      <v-toolbar-title v-text="title" />
+      <!-- <v-toolbar-title v-if="$vuetify.breakpoint.mdAndUp" v-text="title" /> -->
+      <v-toolbar-title :class="{
+            'subtitle-2': $vuetify.breakpoint.smAndDown
+          }" v-text="title" />
       <v-spacer />
 
       <v-btn text class="text-none" nuxt to="/study">
@@ -21,7 +24,12 @@
 
     <v-footer fixed app color="light-blue darken-2">
       <v-row justify="center">
-        <span>By Jake Appiah Baah </span>
+        <span
+          :class="{
+            'subtitle-2': $vuetify.breakpoint.smAndDown
+          }"
+          >By Jake Appiah Baah
+        </span>
         <v-divider class="mx-4" vertical></v-divider>
         <a href="mailto:appiahbaahjake@gmail.com"><v-icon>mdi-gmail</v-icon></a>
 

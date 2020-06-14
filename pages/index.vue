@@ -2,7 +2,7 @@
   <v-layout class="wall" fill-height>
     <v-container fill-height>
       <v-row d-flex wrap align="center">
-        <v-col md="7" cols="12">
+        <v-col md="7" cols="12" class="animate__animated animate__fadeInLeft">
           <p
             :class="{
               headline: $vuetify.breakpoint.smAndDown,
@@ -32,21 +32,16 @@
         </v-col>
         <v-col class="animated fadeInLeftBig" md="5" cols="12">
           <v-container text-center align-center justify-center>
-            <!-- <p>{{ stats }}</p> -->
-            <!-- <v-playback
-              ref="covidrun"
-              url="/covidrun.mp4"
-              auto-play="play"
-            ></v-playback> -->
             <img
               v-if="!ready"
+              class="mx-auto animate__animated animate__zoomIn"
               src="~assets/medicare.svg"
               alt="medical care"
-              width="400vw"
+              :width="$vuetify.breakpoint.mdAndUp ? 500 : 300"
             />
             <v-card
               v-if="ready"
-              class="mx-auto"
+              class="mx-auto animate__animated animate__backInUp"
               max-width="400"
               elevation="24"
               color="indigo darken-4"
@@ -68,7 +63,7 @@
                   >
                 </v-list-item-content>
               </v-list-item>
-              <v-avatar :size="90">
+              <v-avatar :size="$vuetify.breakpoint.mdAndUp ? 80 : 30">
                 <img src="/icon.png" alt="favicon" />
               </v-avatar>
 
@@ -78,7 +73,7 @@
                 <v-tab-item background-color="indigo darken-4">
                   <v-list class="transparent">
                     <v-list-item>
-                      <v-list-item-title>Confirmed Cases</v-list-item-title>
+                      <v-list-item-title>Confirmed </v-list-item-title>
 
                       <v-list-item-icon>
                         <v-icon color="yellow" size="32"
@@ -93,7 +88,7 @@
                       </v-list-item-subtitle>
                     </v-list-item>
                     <v-list-item>
-                      <v-list-item-title>Recovered Cases</v-list-item-title>
+                      <v-list-item-title>Recoveries</v-list-item-title>
 
                       <v-list-item-icon>
                         <v-icon color="green" size="32">mdi-run-fast</v-icon>
@@ -106,7 +101,7 @@
                       </v-list-item-subtitle>
                     </v-list-item>
                     <v-list-item>
-                      <v-list-item-title>Deaths Recorded</v-list-item-title>
+                      <v-list-item-title>Deaths</v-list-item-title>
 
                       <v-list-item-icon>
                         <v-icon color="red" size="32"
@@ -125,7 +120,7 @@
                 <v-tab-item background-color="indigo darken-4">
                   <v-list class="transparent">
                     <v-list-item>
-                      <v-list-item-title>Confirmed Cases</v-list-item-title>
+                      <v-list-item-title>Confirmed </v-list-item-title>
 
                       <v-list-item-icon>
                         <v-icon color="yellow" size="32"
@@ -140,7 +135,7 @@
                       </v-list-item-subtitle>
                     </v-list-item>
                     <v-list-item>
-                      <v-list-item-title>Recovered Cases</v-list-item-title>
+                      <v-list-item-title>Recoveries </v-list-item-title>
 
                       <v-list-item-icon>
                         <v-icon color="green" size="32">mdi-run-fast</v-icon>
@@ -153,7 +148,7 @@
                       </v-list-item-subtitle>
                     </v-list-item>
                     <v-list-item>
-                      <v-list-item-title>Deaths Recorded</v-list-item-title>
+                      <v-list-item-title>Deaths </v-list-item-title>
 
                       <v-list-item-icon>
                         <v-icon color="red" size="32"
@@ -174,33 +169,35 @@
               <v-divider></v-divider>
 
               <v-card-actions>
-                <v-btn-toggle :dense="true" rounded>
-                  <v-btn
-                    text
-                    class="text-none"
-                    href="https://www.ghanahealthservice.org/covid19/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >Ghana Health Service</v-btn
-                  >
-                  <v-btn
-                    text
-                    class="text-none"
-                    href="https://www.who.int/westernpacific/emergencies/covid-19/news-covid-19"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    >W.H.O.</v-btn
-                  >
+                <v-row align="center">
+                  <v-btn-toggle :dense="true" rounded>
+                    <v-btn
+                      text
+                      class="text-none"
+                      href="https://www.ghanahealthservice.org/covid19/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >Ghana Health Service</v-btn
+                    >
+                    <v-btn
+                      text
+                      class="text-none"
+                      href="https://www.who.int/westernpacific/emergencies/covid-19/news-covid-19"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      >W.H.O.</v-btn
+                    >
 
-                  <v-btn
+                    <!-- <v-btn
                     text
                     class="text-none"
                     href="https://www.coronatracker.com/"
                     target="_blank"
                     rel="noopener noreferrer"
                     >Corona Tracker</v-btn
-                  >
-                </v-btn-toggle>
+                  > -->
+                  </v-btn-toggle>
+                </v-row>
               </v-card-actions>
             </v-card>
           </v-container>
