@@ -14,8 +14,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content:
-          process.env.npm_package_description || 'Educov Ghana COVID-19 covid19'
+        content: 'Education on COVID-19'
       }
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
@@ -42,6 +41,7 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
+    'nuxt-purgecss',
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     '@nuxtjs/vuetify'
@@ -50,12 +50,34 @@ export default {
    ** Nuxt.js modules
    */
   modules: [
+    [
+      'nuxt-social-meta',
+      {
+        url: 'https://educov.netlify.app',
+        title: 'COVID-19 Educator',
+        site_name: 'COVID-19 Educator',
+        description: 'COVID-19 education for Ghanaian students',
+        img: 'social.PNG',
+        locale: 'en_US',
+        twitter: '@kobbyjake_',
+        twitter_card: 'social.PNG',
+        themeColor: '#1A237E'
+      }
+    ],
+    'nuxt-webfontloader',
+    '@nuxtjs/pwa',
     '@nuxtjs/toast',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt-community/dotenv-module
     '@nuxtjs/dotenv'
   ],
+  webfontloader: {
+    google: {
+      families: ['Lato:400,700'] //Loads Lato font with weights 400 and 700
+    }
+  },
+
   toast: {
     iconPack: 'mdi',
     position: 'bottom-right',

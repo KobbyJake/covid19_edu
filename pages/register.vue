@@ -1,44 +1,48 @@
 <template>
-  <v-container>
-    <v-row align="center" justify="center">
-      <v-col cols="10" sm="8" lg="6">
-        <v-card shaped dark>
-          <v-card-title>
-            <v-icon left large>mdi-account-edit</v-icon>
-            <span>Student Registration</span>
-          </v-card-title>
-          <hr />
-          <v-form
-            ref="form"
-            v-model="valid"
-            lazy-validation
-            name="educov-student"
-            method="post"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field"
-          >
-            <v-card-text>
-              <v-container>
-                <v-row>
-                  <v-col cols="12" sm="6" md="6">
-                    <v-text-field
-                      v-model="student.first_name"
-                      label="Legal first name*"
-                      required
-                      :rules="firstNameRules"
-                    ></v-text-field>
-                  </v-col>
+  <v-layout class="wall" fill-height>
+    <v-container>
+      <v-row align="center" justify="center">
+        <v-col cols="10" sm="8" lg="6">
+          <v-card shaped dark class="animate__animated animate__backInUp">
+            <v-card-title>
+              <v-icon left large>mdi-account-edit</v-icon>
+              <span>Student Registration</span>
+            </v-card-title>
+            <p class="subtitle-2 ml-2">
+              **For Ghanaian Pre-tertiary students only
+            </p>
+            <hr />
+            <v-form
+              ref="form"
+              v-model="valid"
+              lazy-validation
+              name="educov-student"
+              method="post"
+              data-netlify="true"
+              data-netlify-honeypot="bot-field"
+            >
+              <v-card-text>
+                <v-container>
+                  <v-row>
+                    <v-col cols="12" sm="6" md="6">
+                      <v-text-field
+                        v-model="student.first_name"
+                        label="Legal first name*"
+                        required
+                        :rules="firstNameRules"
+                      ></v-text-field>
+                    </v-col>
 
-                  <v-col cols="12" sm="6" md="6">
-                    <v-text-field
-                      v-model="student.last_name"
-                      label="Legal last name*"
-                      required
-                      :rules="lastNameRules"
-                    ></v-text-field>
-                  </v-col>
+                    <v-col cols="12" sm="6" md="6">
+                      <v-text-field
+                        v-model="student.last_name"
+                        label="Legal last name*"
+                        required
+                        :rules="lastNameRules"
+                      ></v-text-field>
+                    </v-col>
 
-                  <!-- <v-col cols="12" sm="6">
+                    <!-- <v-col cols="12" sm="6">
                     <v-text-field
                       v-model="student.age"
                       required
@@ -56,96 +60,101 @@
                       label="Gender"
                     ></v-select>
                   </v-col> -->
-                  <v-col cols="12">
-                    <v-text-field
-                      v-model="student.name_of_school"
-                      label="Name of school*"
-                      required
-                      :rules="schoolRules"
-                    ></v-text-field>
-                  </v-col>
-                  <v-col cols="12" sm="6" md="6">
-                    <v-autocomplete
-                      v-model="student.region_of_school"
-                      :items="[
-                        'Oti',
-                        'Bono East',
-                        'Ahafo',
-                        'North East',
-                        'Savannah',
-                        'Western North',
-                        'Western',
-                        'Volta',
-                        'Greater Accra',
-                        'Ashanti',
-                        'Central',
-                        'Upper East',
-                        'Upper West'
-                      ]"
-                      label="Region of school*"
-                      required
-                      :rules="regionRules"
-                    ></v-autocomplete>
-                  </v-col>
-                  <v-col cols="12" sm="6" md="6">
-                    <v-autocomplete
-                      v-model="student.class_of_study"
-                      :items="[
-                        'Basic 1',
-                        'Basic 2',
-                        'Basic 3',
-                        'Basic 4',
-                        'Basic 5',
-                        'Basic 6',
-                        'JHS 1',
-                        'JHS 2',
-                        'JHS 3'
-                      ]"
-                      label="Class of study*"
-                      required
-                      :rules="classRules"
-                    ></v-autocomplete>
-                  </v-col>
-                </v-row>
-              </v-container>
+                    <v-col cols="12">
+                      <v-text-field
+                        v-model="student.name_of_school"
+                        label="Name of school*"
+                        required
+                        :rules="schoolRules"
+                      ></v-text-field>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="6">
+                      <v-autocomplete
+                        v-model="student.region_of_school"
+                        :items="[
+                          'Oti',
+                          'Bono East',
+                          'Ahafo',
+                          'North East',
+                          'Savannah',
+                          'Western North',
+                          'Western',
+                          'Volta',
+                          'Greater Accra',
+                          'Ashanti',
+                          'Central',
+                          'Upper East',
+                          'Upper West'
+                        ]"
+                        label="Region of school*"
+                        required
+                        :rules="regionRules"
+                      ></v-autocomplete>
+                    </v-col>
+                    <v-col cols="12" sm="6" md="6">
+                      <v-autocomplete
+                        v-model="student.class_of_study"
+                        :items="[
+                          'SHS 3',
+                          'SHS 2',
+                          'SHS 1',
+                          'JHS 3',
+                          'JHS 2',
+                          'JHS 1',
+                          'Basic 6',
+                          'Basic 5',
+                          'Basic 4',
+                          'Basic 3',
+                          'Basic 2',
+                          'Basic 1'
+                        ]"
+                        label="Class of study*"
+                        required
+                        :rules="classRules"
+                      ></v-autocomplete>
+                    </v-col>
+                  </v-row>
+                </v-container>
 
-              <small>*indicates required field</small>
-            </v-card-text>
-            <hr />
-            <v-card-actions>
-              <v-btn
-                outlined
-                rounded
-                color="default"
-                class="text-none"
-                @click="dialog = false"
-                ><v-icon left>mdi-close</v-icon>Close</v-btn
-              >
-              <v-spacer></v-spacer>
-              <v-btn
-                outlined
-                rounded
-                color="default"
-                class="text-none"
-                @click="clear"
-              >
-                <v-icon>mdi-backspace</v-icon>Reset
-              </v-btn>
-              <v-btn
-                outlined
-                rounded
-                color="light-blue lighten-2"
-                class="text-none"
-                @click="submit"
-              >
-                <v-icon left>mdi-content-save</v-icon>Submit</v-btn
-              >
-            </v-card-actions>
-          </v-form>
-        </v-card>
-      </v-col>
-    </v-row>
-  </v-container>
+                <small>*indicates required field</small>
+              </v-card-text>
+              <hr />
+              <v-card-actions>
+                <v-btn
+                  outlined
+                  rounded
+                  nuxt
+                  color="default"
+                  class="text-none"
+                  to="/"
+                  ><v-icon left>mdi-close</v-icon>No, thanks</v-btn
+                >
+                <v-spacer></v-spacer>
+                <v-btn
+                  outlined
+                  rounded
+                  color="default"
+                  class="text-none"
+                  @click="clear"
+                >
+                  <v-icon>mdi-backspace</v-icon>Reset
+                </v-btn>
+                <v-btn
+                  outlined
+                  rounded
+                  color="light-blue lighten-2"
+                  class="text-none"
+                  @click="submit"
+                >
+                  <v-icon left>mdi-content-save</v-icon>Submit</v-btn
+                >
+              </v-card-actions>
+            </v-form>
+          </v-card>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-layout>
 </template>
 
 <script>
