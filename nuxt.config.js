@@ -41,6 +41,7 @@ export default {
    ** Nuxt.js dev-modules
    */
   buildModules: [
+    '@nuxtjs/pwa',
     'nuxt-purgecss',
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
@@ -65,7 +66,7 @@ export default {
       }
     ],
     'nuxt-webfontloader',
-    '@nuxtjs/pwa',
+    // '@nuxtjs/pwa',
     '@nuxtjs/toast',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',

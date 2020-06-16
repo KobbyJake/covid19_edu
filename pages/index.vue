@@ -25,10 +25,10 @@
             safety precautions to prevent COVID-19 infection and how to manage
             infection.
           </p>
-          <br />
+          <!-- <br /> -->
           <v-row>
             <div>
-              <!-- <br /> -->
+              <br />
               <br />
               <v-btn outlined rounded large class="text-none" nuxt to="/study"
                 ><v-icon left>mdi-library</v-icon>Start learning</v-btn
