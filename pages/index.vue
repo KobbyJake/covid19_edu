@@ -103,7 +103,7 @@
                 <v-tab>🇬🇭 Ghana</v-tab>
                 <v-tab>&#127759; Global</v-tab>
                 <v-tab-item background-color="indigo darken-4">
-                  <v-list class="transparent">
+                  <v-list class="transparent" dense>
                     <v-list-item>
                       <v-list-item-title>Confirmed </v-list-item-title>
 
@@ -113,9 +113,7 @@
                         >
                       </v-list-item-icon>
 
-                      <v-list-item-subtitle
-                        class="text-right font-weight-black headline"
-                      >
+                      <v-list-item-subtitle class="text-right headline">
                         {{ stats.ghana.confirmed }}
                       </v-list-item-subtitle>
                     </v-list-item>
@@ -126,9 +124,7 @@
                         <v-icon color="green" size="32">mdi-run-fast</v-icon>
                       </v-list-item-icon>
 
-                      <v-list-item-subtitle
-                        class="text-right font-weight-black headline"
-                      >
+                      <v-list-item-subtitle class="text-right headline">
                         {{ stats.ghana.recovered }}
                       </v-list-item-subtitle>
                     </v-list-item>
@@ -136,21 +132,30 @@
                       <v-list-item-title>Deaths</v-list-item-title>
 
                       <v-list-item-icon>
-                        <v-icon color="red" size="32"
+                        <v-icon color="grey" size="32"
                           >mdi-account-multiple-remove</v-icon
                         >
                       </v-list-item-icon>
 
-                      <v-list-item-subtitle
-                        class="text-right font-weight-black headline"
-                      >
+                      <v-list-item-subtitle class="text-right headline">
                         {{ stats.ghana.deaths }}
+                      </v-list-item-subtitle>
+                    </v-list-item>
+                    <v-list-item>
+                      <v-list-item-title>Active</v-list-item-title>
+
+                      <v-list-item-icon>
+                        <v-icon color="red" size="32">mdi-bed</v-icon>
+                      </v-list-item-icon>
+
+                      <v-list-item-subtitle class="text-right headline">
+                        {{ activeCasesGh }}
                       </v-list-item-subtitle>
                     </v-list-item>
                   </v-list>
                 </v-tab-item>
                 <v-tab-item background-color="indigo darken-4">
-                  <v-list class="transparent">
+                  <v-list class="transparent" dense>
                     <v-list-item>
                       <v-list-item-title>Confirmed </v-list-item-title>
 
@@ -160,9 +165,7 @@
                         >
                       </v-list-item-icon>
 
-                      <v-list-item-subtitle
-                        class="text-right font-weight-black headline"
-                      >
+                      <v-list-item-subtitle class="text-right headline">
                         {{ stats.global.confirmed }}
                       </v-list-item-subtitle>
                     </v-list-item>
@@ -173,9 +176,7 @@
                         <v-icon color="green" size="32">mdi-run-fast</v-icon>
                       </v-list-item-icon>
 
-                      <v-list-item-subtitle
-                        class="text-right font-weight-black headline"
-                      >
+                      <v-list-item-subtitle class="text-right headline">
                         {{ stats.global.recovered }}
                       </v-list-item-subtitle>
                     </v-list-item>
@@ -183,15 +184,24 @@
                       <v-list-item-title>Deaths </v-list-item-title>
 
                       <v-list-item-icon>
-                        <v-icon color="red" size="32"
+                        <v-icon color="grey" size="32"
                           >mdi-account-multiple-remove</v-icon
                         >
                       </v-list-item-icon>
 
-                      <v-list-item-subtitle
-                        class="text-right font-weight-black headline"
-                      >
+                      <v-list-item-subtitle class="text-right headline">
                         {{ stats.global.deaths }}
+                      </v-list-item-subtitle>
+                    </v-list-item>
+                    <v-list-item>
+                      <v-list-item-title>Active</v-list-item-title>
+
+                      <v-list-item-icon>
+                        <v-icon color="red" size="32">mdi-bed</v-icon>
+                      </v-list-item-icon>
+
+                      <v-list-item-subtitle class="text-right headline">
+                        {{ activeCasesGB }}
                       </v-list-item-subtitle>
                     </v-list-item>
                   </v-list>
@@ -260,12 +270,35 @@ export default {
       stats: {}
     }
   },
-
   mounted() {
     this.$axios.get('https://mazitekgh.com/covid19/v1/').then((res) => {
       this.stats = res.data
       this.ready = true
     })
+  },
+  computed: {
+    activeCasesGB() {
+      if (this.ready) {
+        return (
+          this.stats.global.confirmed -
+          this.stats.global.recovered -
+          this.stats.global.deaths
+        )
+      } else {
+        return 0
+      }
+    },
+    activeCasesGh() {
+      if (this.ready) {
+        return (
+          this.stats.ghana.confirmed -
+          this.stats.ghana.recovered -
+          this.stats.ghana.deaths
+        )
+      } else {
+        return 0
+      }
+    }
   }
 }
 </script>

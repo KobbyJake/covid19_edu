@@ -29,7 +29,7 @@ export default {
   css: [
     { src: 'animate.css/animate.min.css', lang: 'css' },
     {
-      src: 'material-design-icons-iconfont/dist/material-design-icons.css',
+      src: '@mdi/font/css/materialdesignicons.css',
       lang: 'css'
     }
   ],

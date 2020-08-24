@@ -151,7 +151,7 @@
             <v-row class="fill-height" align="center" justify="center">
               <img
                 src="~assets/signs.JPG"
-                :width="$vuetify.breakpoint.mdAndUp ? 900 : 500"
+                :width="$vuetify.breakpoint.mdAndUp ? 550 : 400"
               />
             </v-row>
           </v-carousel-item>
@@ -232,7 +232,7 @@
             <v-row class="fill-height" align="center" justify="center">
               <img
                 src="~assets/covidprotect.jpg"
-                :width="$vuetify.breakpoint.mdAndUp ? 900 : 500"
+                :width="$vuetify.breakpoint.mdAndUp ? 500 : 400"
               />
             </v-row>
           </v-carousel-item>
@@ -1110,7 +1110,7 @@
 
 <script>
 export default {
-  layout: 'flat',
+  // layout: 'flat',
   data() {
     return {
       dialog: false,
